@@ -1,0 +1,27 @@
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 28px;
+}
+
+.divForm {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 80%;
+  background-color: white;
+  padding: 4px;
+  border-radius: 100px;
+}
+
+#search {
+  width: 100%;
+  border: 0;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.Button {
+  margin-right: 5px;
+}
