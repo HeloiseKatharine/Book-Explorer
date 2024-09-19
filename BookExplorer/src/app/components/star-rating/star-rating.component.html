@@ -1,0 +1,9 @@
+<div class="star-rating">
+  <i
+    *ngFor="let star of stars"
+    class="fa"
+    [ngClass]="isFilled(star) ? 'fa-star' : 'fa-star-o'"
+    (click)="rate(star)"
+  >
+  </i>
+</div>
