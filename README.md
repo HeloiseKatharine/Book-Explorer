@@ -6,6 +6,7 @@ Este projeto é uma aplicação web que utiliza a Google Books API para listar e
 
 - **Frontend**: Angular
 - **Backend**: Flask
+- **Banco de Dados**: MongoDB Atlas
 - **API de Livros**: Google Books API
 
 ## Funcionalidades
@@ -23,6 +24,7 @@ Antes de começar, certifique-se de que você tenha os seguintes requisitos inst
 - Node.js e npm (para o Angular)
 - Python 3.x e pip (para o Flask)
 - MongoDB (para o banco de dados)
+- Conta no MongoDB Atlas (para o banco de dados)
 
 ## Configuração do Projeto
 
@@ -58,8 +60,8 @@ Antes de começar, certifique-se de que você tenha os seguintes requisitos inst
     Crie um arquivo `.env` na raiz do diretório `book_explorer_backend` com as seguintes variáveis:
 
     ```env
-    MONGO_URI=<sua URL>
-    DB_NAME=book_explorer_db
+    MONGO_URI=mongodb+srv://<usuario>:<senha>@<cluster>.mongodb.net/<nome-do-banco>?retryWrites=true&w=majority
+    DB_NAME=nome-do-banco
 
     ```
 
