@@ -145,6 +145,28 @@ Contribuições são bem-vindas! Se você deseja contribuir para o projeto, siga
 
 6. **Abra um Pull Request**: No GitHub, vá para a página do seu fork e abra um pull request para o repositório original.
 
+## Sugestões de Melhorias e Críticas
+
+1. Implementação de Sistema de Login:
+
+Atualmente, a aplicação não possui um sistema de autenticação e autorização. Implementar um sistema de login permitiria que os usuários gerenciassem suas próprias listas de favoritos e notas de maneira mais segura e personalizada.
+
+2. Melhoria na Usabilidade:
+
+A interface do usuário pode ser aprimorada para proporcionar uma melhor experiência. Por exemplo, melhorar o design responsivo e a navegabilidade, e adicionar feedbacks visuais mais claros para as interações do usuário.
+
+3. Adição de Funcionalidades Avançadas:
+
+Seria interessante adicionar funcionalidades como filtros avançados na busca de livros, categorização dos favoritos e notas, e a possibilidade de compartilhar livros ou notas com outros usuários.
+
+4. Otimização de Performance:
+
+Avaliar e implementar técnicas de otimização para garantir que a aplicação seja rápida e eficiente, especialmente ao lidar com grandes volumes de dados.
+
+5. Melhorias no Sistema de Notificações:
+
+Adicionar um sistema de notificações para alertar os usuários sobre atualizações importantes, como a confirmação de adição ou exclusão de favoritos e notas.
+
 ## Licença
 
 Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
