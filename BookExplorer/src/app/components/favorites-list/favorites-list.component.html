@@ -1,0 +1,77 @@
+<button routerLink="/home" class="Button">Voltar para a home</button>
+
+<h2>Favorites List</h2>
+
+<section *ngIf="data" class="container">
+  <div *ngFor="let livro of data; let i = index" class="container-book">
+    <div>
+      <div [ngClass]="{ 'no-book': !livro.volumeInfo.imageLinks?.thumbnail }">
+        <img
+          *ngIf="livro.volumeInfo.imageLinks?.thumbnail"
+          [src]="livro.volumeInfo.imageLinks?.thumbnail"
+          alt="{{ livro.volumeInfo.title }}"
+          class="image-book"
+        />
+        <p *ngIf="!livro.volumeInfo.imageLinks?.thumbnail">
+          Imagem indisponível.
+        </p>
+      </div>
+      <h2 class="title-book">{{ livro.volumeInfo.title }}</h2>
+      <p class="authors-book">{{ livro.volumeInfo?.authors }}</p>
+      <p class="description-book">
+        {{ getTruncatedText(livro.volumeInfo.description) }}
+      </p>
+    </div>
+    <div class="action-buttons">
+      <app-star-rating (ratingChange)="onRatingChange(livro, $event)">
+      </app-star-rating>
+
+      <div *ngIf="isRemoving">Removendo...</div>
+
+      <div class="button-icon">
+        <button class="button" (click)="removeFavorite(livro.id)">
+          Remover
+        </button>
+        <button class="button" (click)="showAllNotes(livro.id)">
+          Mostrar todas as notas
+        </button>
+      </div>
+
+      <div class="add-input">
+        <input
+          type="text"
+          [(ngModel)]="notes[livro.id]"
+          placeholder="  Escreva sua nota"
+        />
+
+        <button class="button" (click)="addNote(livro.id)">
+          Adicionar Nota
+        </button>
+      </div>
+
+      <div class="popup-overlay" *ngIf="showAllNotesPopup">
+        <div class="popup-content">
+          <h2>Suas notas</h2>
+          <div class="container-note" *ngFor="let note of selectedBookNotes">
+            <p class="note">{{ note.noteText }}</p>
+            <div class="button-note">
+              <button
+                class="button"
+                (click)="noteToEdit = note._id; editingNoteText = note.noteText"
+              >
+                Editar
+              </button>
+              <button class="button" (click)="deleteNote(note._id)">
+                Excluir
+              </button>
+            </div>
+            <span></span>
+          </div>
+
+          <button class="button" (click)="closeAllNotes()">Fechar</button>
+          <button class="button" routerLink="/home">Voltar para a home</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
