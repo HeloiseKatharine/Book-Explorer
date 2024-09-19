@@ -1,6 +1,14 @@
 <form>
   <div class="divForm">
-    <input type="text" id="search" name="search" placeholder="Pesquise um livro"/><br />
-    <button class="Button">Pesquisar</button>
+    <input
+      type="text"
+      id="search"
+      name="search"
+      placeholder="Pesquise um livro"
+      [(ngModel)]="searchTerm"
+    /><br />
+    <button (click)="handleSearch()" class="Button">Pesquisar</button>
   </div>
 </form>
+
+<app-book-list [searchTerm]="bookSearchTerm"></app-book-list>
