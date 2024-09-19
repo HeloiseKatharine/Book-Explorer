@@ -1,0 +1,36 @@
+<section *ngIf="data?.items" class="container">
+  <div *ngFor="let livro of data.items; let i = index" class="container-book">
+    <div>
+      <div [ngClass]="{ 'no-book': !livro.volumeInfo.imageLinks?.thumbnail }">
+        <img
+          *ngIf="livro.volumeInfo.imageLinks?.thumbnail"
+          [src]="livro.volumeInfo.imageLinks?.thumbnail"
+          alt="{{ livro.volumeInfo.title }}"
+          class="image-book"
+        />
+        <p *ngIf="!livro.volumeInfo.imageLinks?.thumbnail">
+          Imagem indisponível.
+        </p>
+      </div>
+      <h2 class="title-book">{{ livro.volumeInfo.title }}</h2>
+      <p class="authors-book">{{ livro.volumeInfo?.authors }}</p>
+      <p class="description-book">
+        {{ getTruncatedText(livro.volumeInfo.description) }}
+      </p>
+
+      <app-favorite-button
+        [isFavorited]="isFavorite(livro.id)"
+        (toggleFavorite)="toggleFavorite(livro.id, ratings[livro.id], [], [])"
+      >
+      </app-favorite-button>
+
+      <app-star-rating
+        [(rating)]="ratings[livro.id]"
+        (ratingChange)="onRatingChange(livro, $event)"
+      >
+      </app-star-rating>
+
+      <p>Avaliação atual: {{ ratings[livro.id] || 0 }} estrelas</p>
+    </div>
+  </div>
+</section>

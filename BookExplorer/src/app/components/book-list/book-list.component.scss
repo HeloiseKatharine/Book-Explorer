@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  gap: 10px;
+}
+
+.container-book {
+  background-color: #efdcef;
+  padding: 8px;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  width: 30%;
+  gap: 8px;
+  border-radius: 20px;
+  text-align: center;
+  color: #292929;
+}
+
+.container-book > div:first-of-type {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.no-book {
+  width: 128px;
+  height: 198px;
+  background-color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
